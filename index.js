@@ -11,6 +11,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/SimpleAppMovies";
 // import App from "./examples/RNImage";
 // import App from "./examples/RNAnimated";
-import App from "./examples/RNLayoutAnimation";
+// import App from "./examples/RNLayoutAnimation";
+import App from "./examples/RNTimeout";
 
 AppRegistry.registerComponent(appName, () => App);
