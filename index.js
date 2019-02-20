@@ -17,6 +17,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/LifeCircle";
 // import App from "./examples/RNImport";
 // import App from "./examples/Props";
-import App from "./examples/State";
+// import App from "./examples/State";
+import App from "./examples/Ref";
 
 AppRegistry.registerComponent(appName, () => App);
