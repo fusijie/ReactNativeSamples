@@ -13,6 +13,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/RNAnimated";
 // import App from "./examples/RNLayoutAnimation";
 // import App from "./examples/RNTimeout";
-import App from "./examples/DefineComponent";
+// import App from "./examples/DefineComponent";
+import App from "./examples/LifeCircle";
 
 AppRegistry.registerComponent(appName, () => App);
