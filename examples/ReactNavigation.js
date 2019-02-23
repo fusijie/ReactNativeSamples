@@ -1,22 +1,22 @@
 import React, { Component } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { View, Text } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+class HomeScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Home Screen</Text>
+      </View>
+    );
   }
-});
+}
+
+const AppNavigator = createStackNavigator({ Home: { screen: HomeScreen } });
+const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello, World!</Text>
-      </View>
-    );
+    return <AppContainer />;
   }
 }
