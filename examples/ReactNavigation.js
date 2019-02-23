@@ -12,7 +12,24 @@ class HomeScreen extends Component {
   }
 }
 
-const AppNavigator = createStackNavigator({ Home: { screen: HomeScreen } });
+class DetailScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Detail Screen</Text>
+      </View>
+    );
+  }
+}
+
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Detail: DetailScreen
+  },
+  { initialRouteName: "Home" }
+);
+
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends Component {
