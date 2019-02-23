@@ -21,8 +21,8 @@ import { name as appName } from "./app.json";
 // import App from "./examples/Ref";
 // import App from "./examples/Class";
 // import App from "./examples/Flexbox";
-// import App from "./examples/ReactNavigation";
+import App from "./examples/ReactNavigation";
 // import App from "./examples/ReactNavigationLifeCircle";
-import App from "./examples/ReactNavigationModal";
+// import App from "./examples/ReactNavigationModal";
 
 AppRegistry.registerComponent(appName, () => App);

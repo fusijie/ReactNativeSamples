@@ -1,6 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
+
+const styles = StyleSheet.create({
+  screenName: {
+    fontSize: 30
+  }
+});
 
 class HomeScreen extends Component {
   componentDidMount() {
@@ -14,7 +20,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home Screen</Text>
+        <Text style={styles.screenName}>Home</Text>
         <Button
           title="Go to Detail"
           onPress={() => {
@@ -38,7 +44,7 @@ class DetailScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Detail Screen</Text>
+        <Text style={styles.screenName}>Detail Screen</Text>
       </View>
     );
   }

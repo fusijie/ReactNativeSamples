@@ -1,6 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, Button, Image } from "react-native";
+import { StyleSheet, View, Text, Button, Image } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
+
+const styles = StyleSheet.create({
+  screenName: {
+    fontSize: 30
+  }
+});
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -16,6 +22,7 @@ class HomeScreen extends Component {
           justifyContent: "center"
         }}
       >
+        <Text style={styles.screenName}>Home</Text>
         <Button
           title="Go to Navi"
           onPress={() => {
@@ -69,7 +76,7 @@ class NaviScreen extends Component {
           justifyContent: "center"
         }}
       >
-        <Text>Navi Screen</Text>
+        <Text style={styles.screenName}>Navi Screen</Text>
         <Button
           title="Go to Navi again"
           onPress={() => {
@@ -110,7 +117,7 @@ class ParamScreen extends Component {
     const param = navigation.getParam("param", "defaultParam");
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Param Screen</Text>
+        <Text style={styles.screenName}>Param Screen</Text>
         <Text>传递的参数是：{param}</Text>
       </View>
     );
@@ -136,7 +143,7 @@ class TitleScreen extends Component {
     const title = navigation.getParam("title", "defaultTitle");
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Title Screen</Text>
+        <Text style={styles.screenName}>Title Screen</Text>
         <Text>传递的标题是：{title}</Text>
         <Button
           title="Update title"
@@ -174,7 +181,7 @@ class LogoTitleScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Logo Title Screen</Text>
+        <Text style={styles.screenName}>Logo Title Screen</Text>
       </View>
     );
   }
@@ -209,7 +216,7 @@ class InteractionScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Interaction Screen</Text>
+        <Text style={styles.screenName}>Interaction Screen</Text>
         <Text>{this.state.count}</Text>
       </View>
     );

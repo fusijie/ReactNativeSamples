@@ -1,6 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, Button, Image } from "react-native";
+import { StyleSheet, View, Text, Button, Image } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
+
+const styles = StyleSheet.create({
+  screenName: {
+    fontSize: 30
+  }
+});
 
 class HomeScreen extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -26,6 +32,7 @@ class HomeScreen extends Component {
           justifyContent: "center"
         }}
       >
+        <Text style={styles.screenName}>Home Screen</Text>
         <Button
           title="Detail"
           onPress={() => {
@@ -41,7 +48,7 @@ class DetailScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Detail Screen</Text>
+        <Text style={styles.screenName}>Detail Screen</Text>
       </View>
     );
   }
@@ -51,7 +58,7 @@ class ModalScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text style={{ fontSize: 30 }}>This is a modal!</Text>
+        <Text style={styles.screenName}>This is a modal!</Text>
         <Button
           onPress={() => this.props.navigation.goBack()}
           title="Dismiss"
