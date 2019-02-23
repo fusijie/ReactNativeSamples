@@ -242,7 +242,15 @@ const AppNavigator = createStackNavigator(
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends Component {
+  handleNavigationChange(prevState, newState, action) {
+    console.log(prevState);
+    console.log(newState);
+    console.log(action);
+  }
+
   render() {
-    return <AppContainer />;
+    return (
+      <AppContainer onNavigationStateChange={this.handleNavigationChange} />
+    );
   }
 }
