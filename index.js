@@ -20,6 +20,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/State";
 // import App from "./examples/Ref";
 // import App from "./examples/Class";
-import App from "./examples/Flexbox";
+// import App from "./examples/Flexbox";
+import App from "./examples/ReactNavigation";
 
 AppRegistry.registerComponent(appName, () => App);
