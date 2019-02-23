@@ -9,7 +9,13 @@ class HomeScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
         <Text>Home Screen</Text>
         <Button
           title="Go to Navi"
@@ -45,7 +51,13 @@ class NaviScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
         <Text>Navi Screen</Text>
         <Button
           title="Go to Navi again"
@@ -108,6 +120,12 @@ class TitleScreen extends Component {
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text>Title Screen</Text>
         <Text>传递的标题是：{title}</Text>
+        <Button
+          title="Update title"
+          onPress={() => {
+            this.props.navigation.setParams({ title: "Title Update New" });
+          }}
+        />
       </View>
     );
   }
