@@ -44,6 +44,12 @@ class HomeScreen extends Component {
             this.props.navigation.navigate("LogoTitle");
           }}
         />
+        <Button
+          title="Go to Interaction"
+          onPress={() => {
+            this.props.navigation.navigate("Interaction");
+          }}
+        />
       </View>
     );
   }
@@ -174,13 +180,50 @@ class LogoTitleScreen extends Component {
   }
 }
 
+class InteractionScreen extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "Interaction",
+      headerRight: (
+        <Button
+          onPress={navigation.getParam("increaseCount")}
+          title="+1"
+          color="#fff"
+        />
+      )
+    };
+  };
+
+  state = {
+    count: 0
+  };
+
+  _increaseCount = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  componentDidMount() {
+    this.props.navigation.setParams({ increaseCount: this._increaseCount });
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Interaction Screen</Text>
+        <Text>{this.state.count}</Text>
+      </View>
+    );
+  }
+}
+
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
     Navi: NaviScreen,
     Param: ParamScreen,
     Title: TitleScreen,
-    LogoTitle: LogoTitleScreen
+    LogoTitle: LogoTitleScreen,
+    Interaction: InteractionScreen
   },
   {
     initialRouteName: "Home",
