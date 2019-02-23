@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, Image } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 class HomeScreen extends Component {
@@ -16,7 +16,6 @@ class HomeScreen extends Component {
           justifyContent: "center"
         }}
       >
-        <Text>Home Screen</Text>
         <Button
           title="Go to Navi"
           onPress={() => {
@@ -37,6 +36,12 @@ class HomeScreen extends Component {
             this.props.navigation.navigate("Title", {
               title: "Title From Home"
             });
+          }}
+        />
+        <Button
+          title="Go to LogoTitle"
+          onPress={() => {
+            this.props.navigation.navigate("LogoTitle");
           }}
         />
       </View>
@@ -109,7 +114,14 @@ class ParamScreen extends Component {
 class TitleScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.getParam("title", "defaultTitle")
+      title: navigation.getParam("title", "defaultTitle"),
+      headerStyle: {
+        backgroundColor: "#055110"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        fontWeight: "bold"
+      }
     };
   };
 
@@ -131,14 +143,57 @@ class TitleScreen extends Component {
   }
 }
 
+class LogoTitle extends Component {
+  render() {
+    return (
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center"
+        }}
+      >
+        <Image
+          source={require("../assets/logo.png")}
+          style={{ width: 30, height: 30 }}
+        />
+        <Text>LogoTitle</Text>
+      </View>
+    );
+  }
+}
+class LogoTitleScreen extends Component {
+  static navigationOptions = {
+    headerTitle: <LogoTitle />
+  };
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Logo Title Screen</Text>
+      </View>
+    );
+  }
+}
+
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
     Navi: NaviScreen,
     Param: ParamScreen,
-    Title: TitleScreen
+    Title: TitleScreen,
+    LogoTitle: LogoTitleScreen
   },
-  { initialRouteName: "Home" }
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#f4511e"
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        fontWeight: "bold"
+      }
+    }
+  }
 );
 
 const AppContainer = createAppContainer(AppNavigator);
