@@ -103,10 +103,10 @@ const AppNavigator = createBottomTabNavigator(
         let IconComponent = Ionicons;
         let iconName;
         if (routeName === "Home") {
-          icon_name = `ios-information-circle${focused ? "" : "-outline"}`;
+          iconName = `ios-information-circle${focused ? "" : "-outline"}`;
           IconComponent = HomeIconWithBadge;
         } else if (routeName === "Settings") {
-          icon_name = `ios-options${focused ? "" : "-outline"}`;
+          iconName = `ios-options${focused ? "" : ""}`;
         }
         return <IconComponent name={iconName} size={25} color={tintColor} />;
       },
