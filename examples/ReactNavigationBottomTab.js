@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
 import { createBottomTabNavigator, createAppContainer } from "react-navigation";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const styles = StyleSheet.create({
   screenName: {
@@ -47,7 +48,26 @@ const AppNavigator = createBottomTabNavigator(
     Home: HomeScreen,
     Settings: SettingsScreen
   },
-  { initialRouteName: "Home" }
+  {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === "Home") {
+          icon_name = `ios-information-circle${focused ? "" : "-outline"}`;
+          // IconComponent = HomeIconWithBadge;
+        } else if (routeName === "Settings") {
+          icon_name = `ios-options${focused ? "" : "-outline"}`;
+        }
+        return <IconComponent name={iconName} size={25} color={tintColor} />;
+      },
+      tabBarOptions: {
+        activeTintColor: "tomato",
+        inactiveTintColor: "gray"
+      }
+    })
+  }
 );
 
 const AppContainer = createAppContainer(AppNavigator);
