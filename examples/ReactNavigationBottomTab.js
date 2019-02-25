@@ -21,6 +21,12 @@ class HomeScreen extends Component {
         }}
       >
         <Text style={styles.screenName}>Home</Text>
+        <Button
+          onPress={() => {
+            this.props.navigation.navigate("Settings");
+          }}
+          title="Go to Settings"
+        />
       </View>
     );
   }
@@ -38,6 +44,12 @@ class SettingsScreen extends Component {
         }}
       >
         <Text style={styles.screenName}>Settings</Text>
+        <Button
+          onPress={() => {
+            this.props.navigation.navigate("Home");
+          }}
+          title="Go to Home"
+        />
       </View>
     );
   }
