@@ -23,8 +23,8 @@ class HomeScreen extends Component {
           onPress={() => this.props.navigation.navigate("Settings")}
         />
         <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate("Details")}
+          title="Go to Detail"
+          onPress={() => this.props.navigation.navigate("Detail")}
         />
       </View>
     );
@@ -41,8 +41,8 @@ class SettingsScreen extends React.Component {
           onPress={() => this.props.navigation.navigate("Home")}
         />
         <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate("Details")}
+          title="Go to Detail"
+          onPress={() => this.props.navigation.navigate("Detail")}
         />
       </View>
     );
