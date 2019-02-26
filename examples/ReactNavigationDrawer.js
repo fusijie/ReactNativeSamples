@@ -34,6 +34,18 @@ class HomeScreen extends Component {
       >
         <Text style={styles.screenName}>Home</Text>
         <Button
+          title="Open Drawer"
+          onPress={() => {
+            this.props.navigation.openDrawer();
+          }}
+        />
+        <Button
+          title="Toggle Drawer"
+          onPress={() => {
+            this.props.navigation.toggleDrawer();
+          }}
+        />
+        <Button
           title="Go to Detail"
           onPress={() => {
             this.props.navigation.navigate("Detail");
