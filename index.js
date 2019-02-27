@@ -27,6 +27,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/ReactNavigationRouter";
 // import App from "./examples/ReactNavigationBottomTab";
 // import App from "./examples/ReactNavigationTabStack";
-import App from "./examples/ReactNavigationDrawer";
+// import App from "./examples/ReactNavigationDrawer";
+import App from "./examples/Authenticatiion";
 
 AppRegistry.registerComponent(appName, () => App);
