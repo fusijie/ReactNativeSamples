@@ -31,6 +31,8 @@ import { name as appName } from "./app.json";
 // import App from "./examples/Authenticatiion";
 // import App from "./examples/ReactNavigationSafeAreaView";
 // import App from "./examples/ReactNavigationForceInset";
-import App from "./examples/ReactNavigationStatusBar";
+// import App from "./examples/ReactNavigationStatusBar";
+// import App from "./examples/ReactNavigationOptions";
+import App from "./examples/ReactNavigationWithNavigation";
 
 AppRegistry.registerComponent(appName, () => App);
