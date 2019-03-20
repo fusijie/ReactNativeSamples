@@ -43,10 +43,19 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 40,
     color: "white"
+  },
+  selected: {
+    marginLeft: 10,
+    fontSize: 40,
+    color: "#5CB85C"
   }
 });
 
 class Banner extends Component {
+  state = {
+    position: 0
+  };
+
   render() {
     return (
       <View style={styles.banner}>
@@ -54,6 +63,7 @@ class Banner extends Component {
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           pagingEnabled={true}
+          onMomentumScrollEnd={this.onAnimationEnd}
         >
           {this.getImages()}
         </ScrollView>
@@ -78,13 +88,26 @@ class Banner extends Component {
     let circles = [];
     for (let i = 0; i < bannerPic.length; i++) {
       circles.push(
-        <Text key={i} style={styles.unselected}>
+        <Text
+          key={i}
+          style={
+            i === this.state.position ? styles.selected : styles.unselected
+          }
+        >
           &bull;
         </Text>
       );
     }
     return circles;
   }
+
+  onAnimationEnd = v => {
+    let offsetX = v.nativeEvent.contentOffset.x;
+    let position = Math.round(offsetX / width);
+    this.setState({
+      position: position
+    });
+  };
 }
 
 export default class App extends Component {
