@@ -21,9 +21,6 @@ const bannerPic = [
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#F5FCFF"
   },
   banner: {
@@ -32,6 +29,20 @@ const styles = StyleSheet.create({
   image: {
     width: width,
     height: 180
+  },
+  indicator: {
+    width: width,
+    height: 40,
+    position: "absolute",
+    bottom: 0,
+    backgroundColor: "rgba(0,0,0,0.5)",
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  unselected: {
+    marginLeft: 10,
+    fontSize: 40,
+    color: "white"
   }
 });
 
@@ -46,6 +57,7 @@ class Banner extends Component {
         >
           {this.getImages()}
         </ScrollView>
+        <View style={styles.indicator}>{this.getIndicator()}</View>
       </View>
     );
   }
@@ -60,6 +72,18 @@ class Banner extends Component {
       );
     }
     return images;
+  }
+
+  getIndicator() {
+    let circles = [];
+    for (let i = 0; i < bannerPic.length; i++) {
+      circles.push(
+        <Text key={i} style={styles.unselected}>
+          &bull;
+        </Text>
+      );
+    }
+    return circles;
   }
 }
 
