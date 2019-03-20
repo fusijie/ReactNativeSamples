@@ -12,7 +12,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/RNImage";
 // import App from "./examples/RNAlert";
 // import App from "./examples/RNClipboard";
-import App from "./examples/RNAsyncStorage";
+// import App from "./examples/RNAsyncStorage";
 // import App from "./examples/RNAnimated";
 // import App from "./examples/RNLayoutAnimation";
 // import App from "./examples/RNTimeout";
@@ -38,5 +38,6 @@ import App from "./examples/RNAsyncStorage";
 // import App from "./examples/ReactNavigationOptions";
 // import App from "./examples/ReactNavigationWithNavigation";
 // import App from "./examples/ReactNavigationRef";
+import App from "./examples/Banner";
 
 AppRegistry.registerComponent(appName, () => App);
