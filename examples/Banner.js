@@ -52,18 +52,53 @@ const styles = StyleSheet.create({
 });
 
 class Banner extends Component {
+  static defaultProps = {
+    duration: 1000
+  };
+
   state = {
     position: 0
   };
+
+  componentDidMount() {
+    this.startTimer();
+  }
+
+  compoentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  startTimer() {
+    let scrollView = this.refs.scrollView;
+    this.timer = setInterval(() => {
+      let cur = this.state.position;
+      if (cur + 1 > bannerPic.length - 1) {
+        cur = 0;
+      } else {
+        cur++;
+      }
+      this.setState({
+        position: cur
+      });
+      scrollView.scrollTo({ x: cur * width, y: 0, animated: true });
+    }, this.props.duration);
+  }
 
   render() {
     return (
       <View style={styles.banner}>
         <ScrollView
+          ref="scrollView"
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           pagingEnabled={true}
           onMomentumScrollEnd={this.onAnimationEnd}
+          onTouchStart={() => {
+            clearInterval(this.timer);
+          }}
+          onTouchEnd={() => {
+            this.startTimer();
+          }}
         >
           {this.getImages()}
         </ScrollView>
@@ -114,7 +149,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Banner />
+        <Banner duration={2000} />
       </View>
     );
   }
