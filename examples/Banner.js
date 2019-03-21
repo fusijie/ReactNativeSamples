@@ -48,6 +48,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 30,
     color: "#5CB85C"
+  },
+  titleContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  title: {
+    fontSize: 20
   }
 });
 
@@ -150,6 +158,9 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Banner duration={2000} />
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>这是一个可以轮播的 banner</Text>
+        </View>
       </View>
     );
   }
