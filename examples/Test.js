@@ -18,8 +18,26 @@ const styles = StyleSheet.create({
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.innerContainer} />
+      <View
+        style={{
+          height: 20,
+          backgroundColor: "pink",
+          flexDirection: "row",
+          justifyContent: "space-around",
+          alignItems: "center",
+          marginTop: 100
+        }}
+      >
+        <View
+          style={{
+            width: 50,
+            height: 50,
+            backgroundColor: "red",
+            alignSelf: "flex-end"
+          }}
+        />
+        <View style={{ width: 50, height: 50, backgroundColor: "green" }} />
+        <View style={{ width: 50, height: 50, backgroundColor: "blue" }} />
       </View>
     );
   }

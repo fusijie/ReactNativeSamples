@@ -7,7 +7,7 @@ import { AppRegistry } from "react-native";
 import { name as appName } from "./app.json";
 
 // import App from "./App";
-// import App from "./examples/Test";
+import App from "./examples/Test";
 // import App from "./examples/HelloWorld";
 // import App from "./examples/SimpleAppMovies";
 // import App from "./examples/RNImage";
@@ -39,6 +39,6 @@ import { name as appName } from "./app.json";
 // import App from "./examples/ReactNavigationOptions";
 // import App from "./examples/ReactNavigationWithNavigation";
 // import App from "./examples/ReactNavigationRef";
-import App from "./examples/Banner";
+// import App from "./examples/Banner";
 
 AppRegistry.registerComponent(appName, () => App);
