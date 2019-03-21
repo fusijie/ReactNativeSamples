@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
   },
   unselected: {
     marginLeft: 10,
-    fontSize: 40,
+    fontSize: 30,
     color: "white"
   },
   selected: {
     marginLeft: 10,
-    fontSize: 40,
+    fontSize: 30,
     color: "#5CB85C"
   }
 });
