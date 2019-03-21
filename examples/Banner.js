@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  SafeView,
+  Platform,
   ScrollView,
   Image,
   StyleSheet,
@@ -10,12 +10,13 @@ import {
 import Dimensions from "Dimensions";
 
 const { width } = Dimensions.get("window");
+const isAndroid = Platform.OS === "android";
 
 const bannerPic = [
   "https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=d31aee36da2a28345ca6300b6bb5c92e/e61190ef76c6a7ef7d58560df3faaf51f3de669b.jpg",
-  "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553081817207&di=e6d6df8ff6cc34e8c57757bdb92c3d52&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8b13632762d0f7032fd8c1c506fa513d2697c545.jpg",
-  "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553081817299&di=bd6de2091778bfebeb3fb1e9baf151f7&imgtype=0&src=http%3A%2F%2Fc.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F8ad4b31c8701a18b4d601b5d902f07082838fe1d.jpg",
-  "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553081817298&di=dffc1508f9626bbae6e3947f33991e88&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2F7af40ad162d9f2d3e0e370f6a7ec8a136327cc3d.jpg"
+  "http://g.hiphotos.baidu.com/image/pic/item/8b13632762d0f7032fd8c1c506fa513d2697c545.jpg",
+  "http://c.hiphotos.baidu.com/image/pic/item/8ad4b31c8701a18b4d601b5d902f07082838fe1d.jpg",
+  "http://h.hiphotos.baidu.com/image/pic/item/7af40ad162d9f2d3e0e370f6a7ec8a136327cc3d.jpg"
 ];
 
 const styles = StyleSheet.create({
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5FCFF"
   },
   banner: {
-    marginTop: 38
+    marginTop: isAndroid ? 0 : 32
   },
   image: {
     width: width,
@@ -41,12 +42,12 @@ const styles = StyleSheet.create({
   },
   unselected: {
     marginLeft: 10,
-    fontSize: 30,
+    fontSize: 40,
     color: "white"
   },
   selected: {
     marginLeft: 10,
-    fontSize: 30,
+    fontSize: 40,
     color: "#5CB85C"
   },
   titleContainer: {
