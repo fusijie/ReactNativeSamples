@@ -19,7 +19,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/RNTimeout";
 // import App from "./examples/DefineComponent";
 // import App from "./examples/LifeCircle";
-// import App from "./examples/RNImport";
+// import App from "./examples/RNExportImport/RNImport";
 // import App from "./examples/Props";
 // import App from "./examples/State";
 // import App from "./examples/Ref";
@@ -39,6 +39,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/ReactNavigationOptions";
 // import App from "./examples/ReactNavigationWithNavigation";
 // import App from "./examples/ReactNavigationRef";
-import App from "./examples/Banner";
+// import App from "./examples/Banner";
+import App from "./examples/TodoList/index";
 
 AppRegistry.registerComponent(appName, () => App);
