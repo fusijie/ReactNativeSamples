@@ -41,6 +41,7 @@ import { name as appName } from "./app.json";
 // import App from "./examples/ReactNavigationRef";
 // import App from "./examples/Banner";
 // import App from "./examples/TodoList/index";
-import App from "./examples/TodoListRedux";
+// import App from "./examples/TodoListRedux";
+import App from "./examples/CounterRedux";
 
 AppRegistry.registerComponent(appName, () => App);
