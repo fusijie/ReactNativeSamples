@@ -1,0 +1,17 @@
+"extends": ["react-native-prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "tabWidth": 4
+      }
+    ],
+    "no-var": "warn",
+    "no-dupe-class-members": "warn",
+    "no-duplicate-case": "warn",
+    "no-duplicate-imports": "warn",
+    "no-dupe-keys": "warn",
+    "no-dupe-args": "warn"
+  }
+}
+具体配置可以参考
