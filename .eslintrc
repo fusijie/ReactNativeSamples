@@ -12,6 +12,8 @@
     "no-duplicate-case": "warn",
     "no-duplicate-imports": "warn",
     "no-dupe-keys": "warn",
-    "no-dupe-args": "warn"
+    "no-dupe-args": "warn",
+    "react/no-deprecated": "warn",
+    "react/no-string-refs": "warn"
   }
 }
