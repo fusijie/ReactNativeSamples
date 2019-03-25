@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import createReactClass from "create-react-class";
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  }
+    container: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#F5FCFF"
+    }
 });
 
 /**
@@ -27,9 +27,9 @@ const styles = StyleSheet.create({
  * 需要使用 npm install create-react-class --save-dev
  */
 let NewComponent = createReactClass({
-  render() {
-    return <Text>Hello {this.props.name}</Text>;
-  }
+    render() {
+        return <Text>Hello {this.props.name}</Text>;
+    }
 });
 
 /**
@@ -40,11 +40,11 @@ let NewComponent = createReactClass({
 // }
 
 export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <NewComponent name="New Component!" />
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={styles.container}>
+                <NewComponent name="New Component!" />
+            </View>
+        );
+    }
 }

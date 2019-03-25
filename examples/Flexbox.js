@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  }
+    container: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#F5FCFF"
+    }
 });
 
 /**
@@ -354,30 +354,30 @@ const styles = StyleSheet.create({
  * margin & padding & position
  */
 export default class App extends Component {
-  render() {
-    return (
-      <View
-        style={{
-          flexDirection: "column",
-          backgroundColor: "darkgray",
-          marginTop: 50,
-          height: 400
-        }}
-      >
-        <View
-          style={{
-            width: 100,
-            height: 100,
-            backgroundColor: "darkcyan",
-            magin: 5,
-            paddingLeft: 10,
-            paddingRight: 10,
-            left: 100
-          }}
-        >
-          <View style={{ flex: 1, backgroundColor: "red" }} />
-        </View>
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View
+                style={{
+                    flexDirection: "column",
+                    backgroundColor: "darkgray",
+                    marginTop: 50,
+                    height: 400
+                }}
+            >
+                <View
+                    style={{
+                        width: 100,
+                        height: 100,
+                        backgroundColor: "darkcyan",
+                        magin: 5,
+                        paddingLeft: 10,
+                        paddingRight: 10,
+                        left: 100
+                    }}
+                >
+                    <View style={{ flex: 1, backgroundColor: "red" }} />
+                </View>
+            </View>
+        );
+    }
 }
