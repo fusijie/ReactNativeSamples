@@ -1,4 +1,5 @@
-"extends": ["react-native-prettier"],
+{
+  "extends": ["react-native-prettier"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -14,4 +15,3 @@
     "no-dupe-args": "warn"
   }
 }
-具体配置可以参考
