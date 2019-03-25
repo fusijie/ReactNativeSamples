@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import HomeContainer from "./containers/HomeContainer";
 
 const styles = StyleSheet.create({
