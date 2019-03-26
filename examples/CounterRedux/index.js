@@ -1,3 +1,9 @@
+/*
+ * @Author: JackyFu
+ * @Date: 2019-03-26 09:23:16
+ * @Last Modified by:   JackyFu
+ * @Last Modified time: 2019-03-26 09:23:16
+ */
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 
